@@ -1,0 +1,14 @@
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\bin\Debug\net7.0\QuadricEquationEx.exe
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\bin\Debug\net7.0\QuadricEquationEx.deps.json
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\bin\Debug\net7.0\QuadricEquationEx.runtimeconfig.json
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\bin\Debug\net7.0\QuadricEquationEx.dll
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\bin\Debug\net7.0\QuadricEquationEx.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\obj\Debug\net7.0\QuadricEquationEx.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\obj\Debug\net7.0\QuadricEquationEx.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\obj\Debug\net7.0\QuadricEquationEx.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\obj\Debug\net7.0\QuadricEquationEx.csproj.CoreCompileInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\obj\Debug\net7.0\QuadricEquationEx.dll
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\obj\Debug\net7.0\refint\QuadricEquationEx.dll
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\obj\Debug\net7.0\QuadricEquationEx.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\obj\Debug\net7.0\QuadricEquationEx.genruntimeconfig.cache
+E:\[coding]\[SIIT]\SIIT-Projects\QuadricEquationEx\QuadricEquationEx\obj\Debug\net7.0\ref\QuadricEquationEx.dll
