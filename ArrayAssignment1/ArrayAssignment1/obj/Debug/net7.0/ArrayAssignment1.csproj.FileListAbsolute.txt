@@ -1,0 +1,14 @@
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\bin\Debug\net7.0\ArrayAssignment1.exe
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\bin\Debug\net7.0\ArrayAssignment1.deps.json
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\bin\Debug\net7.0\ArrayAssignment1.runtimeconfig.json
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\bin\Debug\net7.0\ArrayAssignment1.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\bin\Debug\net7.0\ArrayAssignment1.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\obj\Debug\net7.0\ArrayAssignment1.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\obj\Debug\net7.0\ArrayAssignment1.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\obj\Debug\net7.0\ArrayAssignment1.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\obj\Debug\net7.0\ArrayAssignment1.csproj.CoreCompileInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\obj\Debug\net7.0\ArrayAssignment1.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\obj\Debug\net7.0\refint\ArrayAssignment1.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\obj\Debug\net7.0\ArrayAssignment1.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\obj\Debug\net7.0\ArrayAssignment1.genruntimeconfig.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ArrayAssignment1\ArrayAssignment1\obj\Debug\net7.0\ref\ArrayAssignment1.dll
