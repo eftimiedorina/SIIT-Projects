@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "ArrayAssignment2/1.0.0": {
+        "runtime": {
+          "ArrayAssignment2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ArrayAssignment2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
