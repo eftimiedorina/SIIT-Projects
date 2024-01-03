@@ -1,0 +1,14 @@
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\bin\Debug\net7.0\ROT3Cipher.exe
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\bin\Debug\net7.0\ROT3Cipher.deps.json
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\bin\Debug\net7.0\ROT3Cipher.runtimeconfig.json
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\bin\Debug\net7.0\ROT3Cipher.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\bin\Debug\net7.0\ROT3Cipher.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\obj\Debug\net7.0\ROT3Cipher.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\obj\Debug\net7.0\ROT3Cipher.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\obj\Debug\net7.0\ROT3Cipher.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\obj\Debug\net7.0\ROT3Cipher.csproj.CoreCompileInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\obj\Debug\net7.0\ROT3Cipher.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\obj\Debug\net7.0\refint\ROT3Cipher.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\obj\Debug\net7.0\ROT3Cipher.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\obj\Debug\net7.0\ROT3Cipher.genruntimeconfig.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ROT3Cipher\ROT3Cipher\obj\Debug\net7.0\ref\ROT3Cipher.dll
