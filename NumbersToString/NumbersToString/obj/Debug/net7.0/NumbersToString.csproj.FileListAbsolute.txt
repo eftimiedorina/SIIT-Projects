@@ -1,0 +1,14 @@
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\bin\Debug\net7.0\NumbersToString.exe
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\bin\Debug\net7.0\NumbersToString.deps.json
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\bin\Debug\net7.0\NumbersToString.runtimeconfig.json
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\bin\Debug\net7.0\NumbersToString.dll
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\bin\Debug\net7.0\NumbersToString.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\obj\Debug\net7.0\NumbersToString.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\obj\Debug\net7.0\NumbersToString.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\obj\Debug\net7.0\NumbersToString.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\obj\Debug\net7.0\NumbersToString.csproj.CoreCompileInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\obj\Debug\net7.0\NumbersToString.dll
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\obj\Debug\net7.0\refint\NumbersToString.dll
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\obj\Debug\net7.0\NumbersToString.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\obj\Debug\net7.0\NumbersToString.genruntimeconfig.cache
+E:\[coding]\[SIIT]\SIIT-Projects\NumbersToString\NumbersToString\obj\Debug\net7.0\ref\NumbersToString.dll
