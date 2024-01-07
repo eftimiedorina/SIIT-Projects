@@ -10,10 +10,20 @@ namespace ROT3Cipher
             string input = Console.ReadLine();
             StringBuilder sb = new StringBuilder();
 
-            for (int i = 0; i<sb.Length; i++) 
+            foreach(char c in input) 
             {
-                sb[i] = sb[i] 
+                if(char.IsLetter(c))
+                {
+                   char baseChar = char.IsUpper(c) ? 'A' : 'a';
+                    sb.Append((char)((c - baseChar + 3) % 26 + baseChar));
+                }
+                else 
+                {
+                    sb.Append(c);
+                }
             }
+
+            Console.WriteLine($"ROT3 equivalent: {sb}");
             
         }
     }
