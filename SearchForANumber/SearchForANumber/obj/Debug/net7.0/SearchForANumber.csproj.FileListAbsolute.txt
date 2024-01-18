@@ -1,0 +1,14 @@
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\bin\Debug\net7.0\SearchForANumber.exe
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\bin\Debug\net7.0\SearchForANumber.deps.json
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\bin\Debug\net7.0\SearchForANumber.runtimeconfig.json
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\bin\Debug\net7.0\SearchForANumber.dll
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\bin\Debug\net7.0\SearchForANumber.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\obj\Debug\net7.0\SearchForANumber.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\obj\Debug\net7.0\SearchForANumber.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\obj\Debug\net7.0\SearchForANumber.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\obj\Debug\net7.0\SearchForANumber.csproj.CoreCompileInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\obj\Debug\net7.0\SearchForANumber.dll
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\obj\Debug\net7.0\refint\SearchForANumber.dll
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\obj\Debug\net7.0\SearchForANumber.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\obj\Debug\net7.0\SearchForANumber.genruntimeconfig.cache
+E:\[coding]\[SIIT]\SIIT-Projects\SearchForANumber\SearchForANumber\obj\Debug\net7.0\ref\SearchForANumber.dll
