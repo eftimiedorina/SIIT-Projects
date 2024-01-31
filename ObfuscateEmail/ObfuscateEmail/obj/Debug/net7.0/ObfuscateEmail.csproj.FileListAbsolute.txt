@@ -1,0 +1,14 @@
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\bin\Debug\net7.0\ObfuscateEmail.exe
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\bin\Debug\net7.0\ObfuscateEmail.deps.json
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\bin\Debug\net7.0\ObfuscateEmail.runtimeconfig.json
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\bin\Debug\net7.0\ObfuscateEmail.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\bin\Debug\net7.0\ObfuscateEmail.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\obj\Debug\net7.0\ObfuscateEmail.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\obj\Debug\net7.0\ObfuscateEmail.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\obj\Debug\net7.0\ObfuscateEmail.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\obj\Debug\net7.0\ObfuscateEmail.csproj.CoreCompileInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\obj\Debug\net7.0\ObfuscateEmail.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\obj\Debug\net7.0\refint\ObfuscateEmail.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\obj\Debug\net7.0\ObfuscateEmail.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\obj\Debug\net7.0\ObfuscateEmail.genruntimeconfig.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ObfuscateEmail\ObfuscateEmail\obj\Debug\net7.0\ref\ObfuscateEmail.dll

@@ -1,0 +1,14 @@
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\bin\Debug\net7.0\NearestCity.exe
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\bin\Debug\net7.0\NearestCity.deps.json
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\bin\Debug\net7.0\NearestCity.runtimeconfig.json
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\bin\Debug\net7.0\NearestCity.dll
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\bin\Debug\net7.0\NearestCity.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\obj\Debug\net7.0\NearestCity.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\obj\Debug\net7.0\NearestCity.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\obj\Debug\net7.0\NearestCity.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\obj\Debug\net7.0\NearestCity.csproj.CoreCompileInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\obj\Debug\net7.0\NearestCity.dll
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\obj\Debug\net7.0\refint\NearestCity.dll
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\obj\Debug\net7.0\NearestCity.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\obj\Debug\net7.0\NearestCity.genruntimeconfig.cache
+E:\[coding]\[SIIT]\SIIT-Projects\NearestCity\NearestCity\obj\Debug\net7.0\ref\NearestCity.dll
