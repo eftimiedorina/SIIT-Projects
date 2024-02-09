@@ -1,0 +1,14 @@
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\bin\Debug\net7.0\ClassStudentAssignment.exe
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\bin\Debug\net7.0\ClassStudentAssignment.deps.json
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\bin\Debug\net7.0\ClassStudentAssignment.runtimeconfig.json
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\bin\Debug\net7.0\ClassStudentAssignment.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\bin\Debug\net7.0\ClassStudentAssignment.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\obj\Debug\net7.0\ClassStudentAssignment.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\obj\Debug\net7.0\ClassStudentAssignment.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\obj\Debug\net7.0\ClassStudentAssignment.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\obj\Debug\net7.0\ClassStudentAssignment.csproj.CoreCompileInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\obj\Debug\net7.0\ClassStudentAssignment.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\obj\Debug\net7.0\refint\ClassStudentAssignment.dll
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\obj\Debug\net7.0\ClassStudentAssignment.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\obj\Debug\net7.0\ClassStudentAssignment.genruntimeconfig.cache
+E:\[coding]\[SIIT]\SIIT-Projects\ClassStudentAssignment\ClassStudentAssignment\obj\Debug\net7.0\ref\ClassStudentAssignment.dll
