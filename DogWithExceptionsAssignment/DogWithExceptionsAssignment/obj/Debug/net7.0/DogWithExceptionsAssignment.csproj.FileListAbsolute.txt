@@ -1,0 +1,14 @@
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\bin\Debug\net7.0\DogWithExceptionsAssignment.exe
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\bin\Debug\net7.0\DogWithExceptionsAssignment.deps.json
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\bin\Debug\net7.0\DogWithExceptionsAssignment.runtimeconfig.json
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\bin\Debug\net7.0\DogWithExceptionsAssignment.dll
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\bin\Debug\net7.0\DogWithExceptionsAssignment.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\obj\Debug\net7.0\DogWithExceptionsAssignment.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\obj\Debug\net7.0\DogWithExceptionsAssignment.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\obj\Debug\net7.0\DogWithExceptionsAssignment.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\obj\Debug\net7.0\DogWithExceptionsAssignment.csproj.CoreCompileInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\obj\Debug\net7.0\DogWithExceptionsAssignment.dll
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\obj\Debug\net7.0\refint\DogWithExceptionsAssignment.dll
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\obj\Debug\net7.0\DogWithExceptionsAssignment.pdb
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\obj\Debug\net7.0\DogWithExceptionsAssignment.genruntimeconfig.cache
+E:\[coding]\[SIIT]\SIIT-Projects\DogWithExceptionsAssignment\DogWithExceptionsAssignment\obj\Debug\net7.0\ref\DogWithExceptionsAssignment.dll

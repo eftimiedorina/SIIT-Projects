@@ -7,7 +7,6 @@
             Student[] students = new Student[4];
             byte ct = 0;
 
-
             while (ct < 4)
             {
                 Console.WriteLine("Enter age:");
@@ -38,8 +37,6 @@
             {
                 Console.WriteLine($"Insert a mark for {students[i].Name}:");
                 students[i].Mark = int.Parse(Console.ReadLine());
-
-
             }
 
             double average = 0;
