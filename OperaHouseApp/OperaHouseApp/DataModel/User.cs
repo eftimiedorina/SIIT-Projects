@@ -17,11 +17,6 @@ namespace OperaHouseApp.DataModel
             Username = username;
         }
 
-        protected User(int v, string username)
-        {
-            V = v;
-            Username = username;
-        }
 
         public abstract void DisplayMenu();
         public abstract void ExitApplication();
