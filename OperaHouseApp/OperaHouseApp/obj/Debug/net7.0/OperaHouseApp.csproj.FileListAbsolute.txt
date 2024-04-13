@@ -1,0 +1,5 @@
+E:\[coding]\[SIIT]\SIIT-Projects\OperaHouseApp\OperaHouseApp\obj\Debug\net7.0\OperaHouseApp.csproj.AssemblyReference.cache
+E:\[coding]\[SIIT]\SIIT-Projects\OperaHouseApp\OperaHouseApp\obj\Debug\net7.0\OperaHouseApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\[coding]\[SIIT]\SIIT-Projects\OperaHouseApp\OperaHouseApp\obj\Debug\net7.0\OperaHouseApp.AssemblyInfoInputs.cache
+E:\[coding]\[SIIT]\SIIT-Projects\OperaHouseApp\OperaHouseApp\obj\Debug\net7.0\OperaHouseApp.AssemblyInfo.cs
+E:\[coding]\[SIIT]\SIIT-Projects\OperaHouseApp\OperaHouseApp\obj\Debug\net7.0\OperaHouseApp.csproj.CoreCompileInputs.cache

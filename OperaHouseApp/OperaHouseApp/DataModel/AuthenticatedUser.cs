@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace OperaHouseApp.DataModel
 {
-    public class LoggedUser : User
+    public class AuthenticatedUser : User
     {
         public override UserType Type => UserType.LoggedUser;
 
-        public LoggedUser (int id, string username, string password) : base (id, username, password) { }
+        public AuthenticatedUser (int id, string username, string password) : base (id, username, password) { }
 
         public override void DisplayMenu()
         {

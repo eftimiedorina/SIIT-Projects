@@ -8,17 +8,17 @@ namespace OperaHouseApp.DataModel
 {
     public class Zone
     {
+        public string ZoneId { get; set; }
         public string Name { get; set; } // lodge, hall, gallery
-        public int TotalSeats { get; set; }
         public decimal Price {  get; set; }
         public List<Seat> Seats { get; set; }
 
-        public Zone(string name, int totalSeats, decimal price)
+        public Zone(string zoneId, string name, decimal price, List<Seat> seats = null)
         {
-            this.Name = name;
-            this.TotalSeats = totalSeats;
-            this.Price = price;
-            Seats = Enumerable.Range(1, totalSeats).Select(number => new Seat(number)).ToList();
+            ZoneId = zoneId;
+            Name = name;
+            Price = price;
+            Seats = seats ?? new List<Seat>(); // Inițializează cu lista furnizată sau cu o listă nouă dacă nu este furnizată
         }
 
         // Metoda pentru a afla numărul de locuri libere
@@ -46,6 +46,11 @@ namespace OperaHouseApp.DataModel
                 return true;
             }
             return false;
+        }
+
+        public void UpdatePrice(decimal newPrice)
+        {
+            Price = newPrice;
         }
     }
 }
