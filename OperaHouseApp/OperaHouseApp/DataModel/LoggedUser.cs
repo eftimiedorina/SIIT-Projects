@@ -8,7 +8,9 @@ namespace OperaHouseApp.DataModel
 {
     public class LoggedUser : User
     {
-        public LoggedUser (string username) : base (1, username) { }
+        public override UserType Type => UserType.LoggedUser;
+
+        public LoggedUser (int id, string username, string password) : base (id, username, password) { }
 
         public override void DisplayMenu()
         {

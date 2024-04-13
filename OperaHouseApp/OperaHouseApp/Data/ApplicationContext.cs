@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OperaHouseApp.Authentication
+namespace OperaHouseApp.Data
 {
-    public class AuthenticationService
+    internal class ApplicationContext
     {
-
     }
 }

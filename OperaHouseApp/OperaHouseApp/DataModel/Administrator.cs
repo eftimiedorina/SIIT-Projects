@@ -8,7 +8,9 @@ namespace OperaHouseApp.DataModel
 {
     public class Administrator : User
     {
-        public Administrator(UserType userType, string username) : base(2,username) { }
+        public override UserType Type => UserType.Administrator;
+
+        public Administrator(int id, string username, string password) : base(id,username, password) { }
 
         public override void DisplayMenu()
         {

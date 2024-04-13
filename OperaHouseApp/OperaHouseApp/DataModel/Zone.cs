@@ -20,5 +20,32 @@ namespace OperaHouseApp.DataModel
             this.Price = price;
             Seats = Enumerable.Range(1, totalSeats).Select(number => new Seat(number)).ToList();
         }
+
+        // Metoda pentru a afla numărul de locuri libere
+        public int AvailableSeats => Seats.Count(seat => !seat.IsOccupied);
+
+        // Metoda pentru a ocupa un loc specific
+        public bool TryOccupySeat(int seatNumber)
+        {
+            var seat = Seats.FirstOrDefault(s => s.Number == seatNumber && !s.IsOccupied);
+            if (seat != null)
+            {
+                seat.OccupySeat();
+                return true;
+            }
+            return false;
+        }
+
+        // Metoda pentru a elibera un loc specific
+        public bool TryFreeSeat(int seatNumber)
+        {
+            var seat = Seats.FirstOrDefault(s => s.Number == seatNumber && s.IsOccupied);
+            if (seat != null)
+            {
+                seat.FreeSeat();
+                return true;
+            }
+            return false;
+        }
     }
 }

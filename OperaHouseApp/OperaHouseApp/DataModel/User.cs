@@ -8,13 +8,16 @@ namespace OperaHouseApp.DataModel
 {
     public abstract class User
     {
-        public UserType Type { get; set; }
+        public int Id { get; set; }
+        public abstract UserType Type { get;}
         public string Username { get; set; }
+        public string Password { get; set; }
 
-        protected User(UserType type, string username)
+        protected User(int id, string username,string password)
         {
-            Type = type;
+            Id = id;
             Username = username;
+            Password = password;
         }
 
 
