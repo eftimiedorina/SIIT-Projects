@@ -10,7 +10,7 @@ namespace OperaHouseApp.DataModel
     {
         public int UserId { get; set; }
         public string ZoneId {  get; set; }
-        public List<int> SeatNumbers { get; private set; }
+        public List<int> SeatNumbers { get; set; }
         public decimal TotalPrice { get; set; }
 
         public Ticket(int userID, string zoneId, List<int> seatNumbers, decimal totalPrice)

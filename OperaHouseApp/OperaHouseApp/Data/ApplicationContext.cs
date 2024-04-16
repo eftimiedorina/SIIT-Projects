@@ -84,7 +84,7 @@ namespace OperaHouseApp.Data
             return null;
         }
 
-        public void UpdateSeats(Seat seat)
+        public void UpdateSeat(Seat seat)
         {
             using(var connection = new SqlConnection(_connectionString))
             {

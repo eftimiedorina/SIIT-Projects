@@ -42,5 +42,50 @@ namespace OperaHouseApp.Services
         {
           
         }
+
+        public bool SellTickets(string zoneId, List<int> seatNumbers, int userId)
+        {
+            // Obține zona după ID
+            var zone = _context.GetZones().FirstOrDefault(z => z.ZoneId == zoneId);
+            if (zone == null)
+            {
+                Console.WriteLine("Zone not found.");
+                return false;
+            }
+
+            // Verifică dacă toate locurile solicitate sunt libere
+            var availableSeats = zone.Seats.Where(seat => !seat.IsOccupied && seatNumbers.Contains(seat.Number)).ToList();
+            if (availableSeats.Count != seatNumbers.Count)
+            {
+                Console.WriteLine("Some of the requested seats are not available.");
+                return false;
+            }
+
+            // Ocupă locurile
+            foreach (var seat in availableSeats)
+            {
+                seat.IsOccupied = true;
+                _context.UpdateSeat(seat);  // Presupunem existența acestei metode în ApplicationContext
+            }
+
+            // Calculează prețul total
+            decimal totalPrice = availableSeats.Count * zone.Price;
+
+            // Crează biletul
+            Ticket ticket = new Ticket
+            {
+                UserId = userId,
+                ZoneId = zoneId,
+                SeatNumbers = availableSeats.Select(s => s.Number).ToList(),
+                TotalPrice = totalPrice      
+            };
+
+            // Salvează biletul în baza de date
+            _context.SaveTicket(ticket);  // Presupunem existența acestei metode în ApplicationContext
+
+            Console.WriteLine("Ticket sold successfully.");
+            return true;
+        }
+        
     }
 }
