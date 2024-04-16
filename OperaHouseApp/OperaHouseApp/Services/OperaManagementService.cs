@@ -72,14 +72,8 @@ namespace OperaHouseApp.Services
             decimal totalPrice = availableSeats.Count * zone.Price;
 
             // Crează biletul
-            Ticket ticket = new Ticket
-            {
-                UserId = userId,
-                ZoneId = zoneId,
-                SeatNumbers = availableSeats.Select(s => s.Number).ToList(),
-                TotalPrice = totalPrice      
-            };
-
+            Ticket ticket = new Ticket(userId, zoneId, availableSeats.Select(s => s.Number).ToList(), totalPrice);
+            
             // Salvează biletul în baza de date
             _context.SaveTicket(ticket); 
 

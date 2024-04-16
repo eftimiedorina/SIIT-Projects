@@ -7,7 +7,7 @@ namespace OperaHouseApp
     {
         static void Main(string[] args)
         {
-            string connectionString = @"Server=DORINA-LAPTOP\SQLEXPRESS01;Database=OperaHouseManagement;User Id=DORINA-LAPTOP\Dorina;Password='';";
+            string connectionString = @"Data Source=localhost\SQLEXPRESS01;Database=OperaHouseManagement;Integrated Security=SSPI";
             ApplicationContext context = new ApplicationContext(connectionString);
             OperaManagementService managementService = new OperaManagementService(context);
 

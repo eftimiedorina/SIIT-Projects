@@ -1,0 +1,1 @@
+SELECT z.ZoneId, z.Name, z.Price, s.SeatId, s.Number, s.IsOccupied FROM Zones z LEFT JOIN Seats s ON z.ZoneId = s.ZoneId
