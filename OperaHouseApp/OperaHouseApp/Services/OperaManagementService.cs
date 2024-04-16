@@ -98,11 +98,11 @@ namespace OperaHouseApp.Services
 
         private void AdjustSeats()
         {
-            Console.WriteLine("Alegeti o zona pentru care doriti sa ajustaai numarul de locuri:");
+            Console.WriteLine("Alegeti o zona pentru care doriti sa ajustati numarul de locuri:");
             Console.WriteLine("1) Modificare numar locuri la loja");
-            Console.WriteLine("2) Modificare numar locuri în sala");
+            Console.WriteLine("2) Modificare numar locuri in sala");
             Console.WriteLine("3) Modificare numar locuri la galerie");
-            Console.Write("Introduceai opaiunea: ");
+            Console.Write("Introduceti optiunea: ");
 
             string option = Console.ReadLine();
             string zoneId = "";
@@ -123,12 +123,12 @@ namespace OperaHouseApp.Services
                     zoneName = "Gallery Zone";
                     break;
                 default:
-                    Console.WriteLine("Optiune invalida, ancercaai din nou.");
+                    Console.WriteLine("Optiune invalida, incercati din nou.");
                     AdjustSeats();
                     return;
             }
 
-            Console.WriteLine($"Introduceai numarul de locuri pentru {zoneName}:");
+            Console.WriteLine($"Introduceti numarul de locuri pentru {zoneName}:");
             if (!int.TryParse(Console.ReadLine(), out int newSeatCount) || newSeatCount < 0)
             {
                 Console.WriteLine("Numarul introdus este invalid. Introduceți un număr pozitiv.");
