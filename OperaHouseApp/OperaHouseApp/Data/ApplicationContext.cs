@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OperaHouseApp.Data
 {
@@ -82,6 +83,43 @@ namespace OperaHouseApp.Data
             }
             return null;
         }
+
+        public void UpdateSeats(Seat seat)
+        {
+            using(var connection = new SqlConnection(_connectionString))
+            {
+                var command = new SqlCommand("UPDATE Seats SET IsOccupied = @IsOccupied WHERE SeatId = @SeatId", connection);
+                command.Parameters.AddWithValue("@IsOccupied", seat.IsOccupied);
+                command.Parameters.AddWithValue("@SeatId", seat.SeatId);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void SaveTicket(Ticket ticket)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = new SqlCommand("INSERT INTO Tickets (UserId, ZoneId, TotalPrice) VALUES (@UserId, @ZoneId, @TotalPrice); SELECT SCOPE_IDENTITY();", connection);
+                command.Parameters.AddWithValue("@UserId", ticket.UserId);
+                command.Parameters.AddWithValue("@ZoneId", ticket.ZoneId);
+                command.Parameters.AddWithValue("@TotalPrice", ticket.TotalPrice);
+
+                connection.Open();
+                int ticketId = Convert.ToInt32(command.ExecuteScalar());
+
+                foreach (var seatNumber in ticket.SeatNumbers)
+                {
+                    var seatCommand = new SqlCommand("INSERT INTO TicketSeats (TicketId, SeatId) VALUES (@TicketId, (SELECT SeatId FROM Seats WHERE Number = @Number AND ZoneId = @ZoneId))", connection);
+                    seatCommand.Parameters.AddWithValue("@TicketId", ticketId);
+                    seatCommand.Parameters.AddWithValue("@Number", seatNumber);
+                    seatCommand.Parameters.AddWithValue("@ZoneId", ticket.ZoneId);
+                    seatCommand.ExecuteNonQuery();
+                }
+            }
+        }
+        
     }
 
 }

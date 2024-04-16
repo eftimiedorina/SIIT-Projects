@@ -18,10 +18,10 @@ namespace OperaHouseApp.Services
         }
 
         // Metoda pentru vânzarea biletelor
-        public Ticket SellTickets(string zoneId, List<int> seatNumbers, int userId) 
+      /*  public Ticket SellTickets(string zoneId, List<int> seatNumbers, int userId) 
         {
             
-        }
+        }*/
 
         // Metoda pentru afișarea situației locurilor libere
         public void DisplayAvailableSeats()
