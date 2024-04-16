@@ -137,7 +137,7 @@ namespace OperaHouseApp.Data
                 {
                     while (reader.Read())
                     {
-                        var ticket = new Ticket(reader.GetInt32(0), userId, reader.GetString(1), new List<int>(), reader.GetDecimal(2));
+                        var ticket = new Ticket(userId, reader.GetString(1), new List<int>(), reader.GetDecimal(2));
                         
                         tickets.Add(ticket);
                     }
@@ -247,6 +247,30 @@ namespace OperaHouseApp.Data
                 }
             }
             return price;
+        }
+
+        public void UpdateZonePrice(string zoneId, decimal newPrice)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand("UPDATE Zones SET Price = @NewPrice WHERE ZoneId = @ZoneId", connection);
+                command.Parameters.AddWithValue("@NewPrice", newPrice);
+                command.Parameters.AddWithValue("@ZoneId", zoneId);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateZoneSeats(string zoneId, int newSeatCount)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand("UPDATE Zones SET SeatCount = @NewSeatCount WHERE ZoneId = @ZoneId", connection);
+                command.Parameters.AddWithValue("@NewSeatCount", newSeatCount);
+                command.Parameters.AddWithValue("@ZoneId", zoneId);
+                command.ExecuteNonQuery();
+            }
         }
 
     }
