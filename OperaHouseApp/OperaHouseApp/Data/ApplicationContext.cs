@@ -101,6 +101,7 @@ namespace OperaHouseApp.Data
         {
             using (var connection = new SqlConnection(_connectionString))
             {
+                // var command = new SqlCommand("INSERT INTO Tickets (UserId, ZoneId, TotalPrice) VALUES (@UserId, @ZoneId, @TotalPrice); SELECT SCOPE_IDENTITY();", connection);
                 var command = new SqlCommand("INSERT INTO Tickets (UserId, ZoneId, TotalPrice) VALUES (@UserId, @ZoneId, @TotalPrice); SELECT SCOPE_IDENTITY();", connection);
                 command.Parameters.AddWithValue("@UserId", ticket.UserId);
                 command.Parameters.AddWithValue("@ZoneId", ticket.ZoneId);
@@ -111,11 +112,20 @@ namespace OperaHouseApp.Data
 
                 foreach (var seatNumber in ticket.SeatNumbers)
                 {
-                    var seatCommand = new SqlCommand("INSERT INTO TicketSeats (TicketId, SeatId) VALUES (@TicketId, (SELECT SeatId FROM Seats WHERE Number = @Number AND ZoneId = @ZoneId))", connection);
+                    var seatCommand = new SqlCommand("INSERT INTO TicketSeats (TicketId, SeatId) VALUES (@TicketId, (SELECT TOP 1 SeatId FROM Seats WHERE Number = @Number AND ZoneId = @ZoneId ORDER BY SeatId))", connection);
                     seatCommand.Parameters.AddWithValue("@TicketId", ticketId);
                     seatCommand.Parameters.AddWithValue("@Number", seatNumber);
                     seatCommand.Parameters.AddWithValue("@ZoneId", ticket.ZoneId);
                     seatCommand.ExecuteNonQuery();
+                  /*  try
+                    {
+                        seatCommand.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                        // Handle exception, e.g., log the error or notify the user
+                        Console.WriteLine("An error occurred when inserting ticket seats: " + ex.Message);
+                    }*/
                 }
 
                 return ticketId;

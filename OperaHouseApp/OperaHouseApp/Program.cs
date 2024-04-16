@@ -25,7 +25,7 @@ namespace OperaHouseApp
             while (true)
             {
                 Console.WriteLine("\nMeniu Vizitator:");
-                Console.WriteLine("1. Afiseaza situaaia locurilor libere");
+                Console.WriteLine("1. Afiseaza situatia locurilor libere");
                 Console.WriteLine("2. Autentificare");
                 Console.WriteLine("3. Iesire");
 
@@ -78,7 +78,8 @@ namespace OperaHouseApp
                 Console.WriteLine("1. Vanzare bilete");
                 Console.WriteLine("2. Returnare bilete");
                 Console.WriteLine("3. Afiseaza situatia locurilor libere");
-                if (currentUser.Id == 3)
+                
+                if (currentUser.Type == UserType.Administrator)
                 {
                     Console.WriteLine("4. Configureaza sala");
                 }
@@ -99,7 +100,7 @@ namespace OperaHouseApp
                         managementService.DisplayAvailableSeats();
                         break;
                     case "4":
-                        if (currentUser.Id == 3)
+                        if (currentUser.Type == UserType.Administrator)
                         {
                             managementService.ConfigureHall();
                         }

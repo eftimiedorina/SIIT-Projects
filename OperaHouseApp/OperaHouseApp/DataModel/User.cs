@@ -9,7 +9,7 @@ namespace OperaHouseApp.DataModel
     public abstract class User
     {
         public int Id { get; set; }
-        public abstract UserType Type { get;}
+        public abstract UserType Type { get; }
         public string Username { get; set; }
         public string Password { get; set; }
 
