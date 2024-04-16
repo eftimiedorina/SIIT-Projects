@@ -29,7 +29,7 @@ namespace OperaHouseApp
                 Console.WriteLine("2. Autentificare");
                 Console.WriteLine("3. Iesire");
 
-                Console.Write("Alegeti o opțiune: ");
+                Console.Write("Alegeti o optiune: ");
                 string option = Console.ReadLine();
 
                 switch (option)
@@ -84,7 +84,7 @@ namespace OperaHouseApp
                 }
                 Console.WriteLine("5. Deconectare");
 
-                Console.Write("Alegeti o opțiune: ");
+                Console.Write("Alegeti o optiune: ");
                 string option = Console.ReadLine();
 
                 switch (option)
