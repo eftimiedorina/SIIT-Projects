@@ -81,7 +81,7 @@ namespace OperaHouseApp.Services
             };
 
             // Salvează biletul în baza de date
-            _context.SaveTicket(ticket);  // Presupunem existența acestei metode în ApplicationContext
+            _context.SaveTicket(ticket); 
 
             Console.WriteLine("Ticket sold successfully.");
             return true;
