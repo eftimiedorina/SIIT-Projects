@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace OperaHouseApp.Services
@@ -35,10 +36,10 @@ namespace OperaHouseApp.Services
         // Metoda pentru configurarea sălii (de exemplu, ajustarea prețurilor)
         public void ConfigureHall()
         {
-            Console.WriteLine("Alegeți o opțiune:");
-            Console.WriteLine("1. Modificări prețuri");
-            Console.WriteLine("2. Ajustări locuri");
-            Console.Write("Introduceți opțiunea: ");
+            Console.WriteLine("Alegeti o optiune:");
+            Console.WriteLine("1. Modificari preturi");
+            Console.WriteLine("2. Ajustari locuri");
+            Console.Write("Introduceti optiunea: ");
             string option = Console.ReadLine();
 
             switch (option)
@@ -50,7 +51,7 @@ namespace OperaHouseApp.Services
                     AdjustSeats();
                     break;
                 default:
-                    Console.WriteLine("Opțiune invalidă, încercați din nou.");
+                    Console.WriteLine("Optiune invalida, incercati din nou.");
                     ConfigureHall();
                     break;
             }
@@ -58,50 +59,50 @@ namespace OperaHouseApp.Services
 
         private void ModifyPrices()
         {
-            Console.WriteLine("Selectați zona pentru care doriți să modificați prețul:");
-            Console.WriteLine("1. Lojă");
-            Console.WriteLine("2. Sală");
+            Console.WriteLine("Selectati zona pentru care doriti sa modificati pretul:");
+            Console.WriteLine("1. Loja");
+            Console.WriteLine("2. Sala");
             Console.WriteLine("3. Galerie");
-            Console.Write("Alegeți o opțiune: ");
+            Console.Write("Alegeti o opțiune: ");
             string priceOption = Console.ReadLine();
             string zoneId = "";
             switch (priceOption)
             {
                 case "1":
-                    zoneId = "Lojă";
+                    zoneId = "A1";
                     break;
                 case "2":
-                    zoneId = "Sală";
+                    zoneId = "C1";
                     break;
                 case "3":
-                    zoneId = "Galerie";
+                    zoneId = "B1";
                     break;
                 default:
-                    Console.WriteLine("Opțiune invalidă, încercați din nou.");
+                    Console.WriteLine("Optiune invalida, incercati din nou.");
                     ModifyPrices();
                     return;
             }
 
-            Console.Write($"Introduceți noul preț pentru {zoneId}: ");
+            Console.Write($"Introduceti noul pret pentru {zoneId}: ");
             if (decimal.TryParse(Console.ReadLine(), out decimal newPrice) && newPrice > 0)
             {
                 _context.UpdateZonePrice(zoneId, newPrice);
-                Console.WriteLine("Prețul a fost actualizat.");
+                Console.WriteLine("Pretul a fost actualizat.");
             }
             else
             {
-                Console.WriteLine("Prețul introdus este invalid. Introduceți un număr pozitiv.");
+                Console.WriteLine("Pretul introdus este invalid. Introduceti un numar pozitiv.");
                 ModifyPrices();
             }
         }
 
         private void AdjustSeats()
         {
-            Console.WriteLine("Alegeți o zonă pentru care doriți să ajustați numărul de locuri:");
-            Console.WriteLine("1) Modificare număr locuri la lojă");
-            Console.WriteLine("2) Modificare număr locuri în sală");
-            Console.WriteLine("3) Modificare număr locuri la galerie");
-            Console.Write("Introduceți opțiunea: ");
+            Console.WriteLine("Alegeti o zona pentru care doriti sa ajustaai numarul de locuri:");
+            Console.WriteLine("1) Modificare numar locuri la loja");
+            Console.WriteLine("2) Modificare numar locuri în sala");
+            Console.WriteLine("3) Modificare numar locuri la galerie");
+            Console.Write("Introduceai opaiunea: ");
 
             string option = Console.ReadLine();
             string zoneId = "";
@@ -122,21 +123,21 @@ namespace OperaHouseApp.Services
                     zoneName = "Gallery Zone";
                     break;
                 default:
-                    Console.WriteLine("Opțiune invalidă, încercați din nou.");
+                    Console.WriteLine("Optiune invalida, ancercaai din nou.");
                     AdjustSeats();
                     return;
             }
 
-            Console.WriteLine($"Introduceți numărul de locuri pentru {zoneName}:");
+            Console.WriteLine($"Introduceai numarul de locuri pentru {zoneName}:");
             if (!int.TryParse(Console.ReadLine(), out int newSeatCount) || newSeatCount < 0)
             {
-                Console.WriteLine("Numărul introdus este invalid. Introduceți un număr pozitiv.");
+                Console.WriteLine("Numarul introdus este invalid. Introduceți un număr pozitiv.");
                 AdjustSeats();
                 return;
             }
 
             _context.UpdateZoneSeats(zoneId, newSeatCount);
-            Console.WriteLine($"Numărul de locuri pentru {zoneName} a fost actualizat la {newSeatCount}.");
+            Console.WriteLine($"Numarul de locuri pentru {zoneName} a fost actualizat la {newSeatCount}.");
         }
 
         public void SellTickets(int currentUserId)
@@ -146,11 +147,11 @@ namespace OperaHouseApp.Services
 
             if (!availableZones.Any())
             {
-                Console.WriteLine("Ne pare rău. Nu mai sunt locuri libere.");
+                Console.WriteLine("Ne pare rau. Nu mai sunt locuri libere.");
                 return;
             }
 
-            Console.WriteLine("Avem locuri libere în:");
+            Console.WriteLine("Avem locuri libere in:");
             foreach (var zone in availableZones)
             {
                 Console.WriteLine($"{zone.Name} ({zone.ZoneId}): {zone.Seats.Count(s => !s.IsOccupied)} locuri libere");
@@ -160,29 +161,29 @@ namespace OperaHouseApp.Services
             Zone selectedZone;
             do
             {
-                Console.WriteLine("Selectați zona în care doriți locurile:");
+                Console.WriteLine("Selectati zona in care doriti locurile:");
                 zoneId = Console.ReadLine();
                 selectedZone = availableZones.FirstOrDefault(z => z.ZoneId == zoneId);
                 if (selectedZone == null)
                 {
-                    Console.WriteLine("Zona selectată nu este validă sau nu are locuri libere. Încercați din nou.");
+                    Console.WriteLine("Zona selectata nu este valida sau nu are locuri libere. Incercati din nou.");
                 }
             }
             while (selectedZone == null);
 
-            Console.WriteLine("Introduceți numărul de locuri:");
+            Console.WriteLine("Introduceti numarul de locuri:");
             int numSeats;
             while (!int.TryParse(Console.ReadLine(), out numSeats) || numSeats <= 0 || numSeats > selectedZone.Seats.Count(s => !s.IsOccupied))
             {
                 if (numSeats > selectedZone.Seats.Count(s => !s.IsOccupied))
                 {
-                    Console.WriteLine($"În zona {selectedZone.Name} mai sunt doar {selectedZone.Seats.Count(s => !s.IsOccupied)} locuri libere.");
-                    Console.WriteLine("Apăsați orice tastă pentru a continua.");
+                    Console.WriteLine($"In zona {selectedZone.Name} mai sunt doar {selectedZone.Seats.Count(s => !s.IsOccupied)} locuri libere.");
+                    Console.WriteLine("Apasati orice tasta pentru a continua.");
                     Console.ReadKey();
                 }
                 else
                 {
-                    Console.WriteLine("Numărul introdus nu este valid. Încercați din nou:");
+                    Console.WriteLine("Numarul introdus nu este valid. Incercati din nou:");
                 }
             }
 
@@ -190,7 +191,7 @@ namespace OperaHouseApp.Services
             seatsToOccupy.ForEach(s => s.IsOccupied = true);
 
             decimal totalPrice = numSeats * selectedZone.Price;
-            Console.WriteLine($"Total de plată: {totalPrice:C}. Bilete vândute cu succes pentru {selectedZone.Name}.");
+            Console.WriteLine($"Total de plata: {totalPrice:C}. Bilete vândute cu succes pentru {selectedZone.Name}.");
 
             Ticket newTicket = new Ticket(currentUserId, zoneId, seatsToOccupy.Select(s => s.Number).ToList(), totalPrice);
             
@@ -204,7 +205,7 @@ namespace OperaHouseApp.Services
 
             if (tickets.Count == 0)
             {
-                Console.WriteLine("Nu s-a vândut încă nici un bilet.");
+                Console.WriteLine("Nu s-a vandut inca nici un bilet.");
                 return;
             }
 
@@ -214,20 +215,20 @@ namespace OperaHouseApp.Services
                 Console.WriteLine($"{ticket.ZoneId}: {ticket.SeatNumbers.Count} locuri ocupate");
             }
 
-            Console.Write("Introduceți ID-ul zonei pentru care doriți să returnați bilete: ");
+            Console.Write("Introduceti ID-ul zonei pentru care doriti sa returnati bilete: ");
             string zoneId = Console.ReadLine();
             var ticketToReturn = tickets.FirstOrDefault(t => t.ZoneId == zoneId);
 
             if (ticketToReturn == null)
             {
-                Console.WriteLine("Nu există bilete vândute în această zonă sau zona introdusă este incorectă.");
+                Console.WriteLine("Nu exista bilete vandute in aceasta zona sau zona introdusa este incorecta.");
                 return;
             }
 
-            Console.Write("Câte bilete returnați? ");
+            Console.Write("Cate bilete returnati? ");
             if (!int.TryParse(Console.ReadLine(), out int numberOfTickets) || numberOfTickets <= 0 || numberOfTickets > ticketToReturn.SeatNumbers.Count)
             {
-                Console.WriteLine($"Număr invalid de bilete. Puteți returna maximum {ticketToReturn.SeatNumbers.Count} bilete.");
+                Console.WriteLine($"Numar invalid de bilete. Puteai returna maximum {ticketToReturn.SeatNumbers.Count} bilete.");
                 return;
             }
 
@@ -238,6 +239,32 @@ namespace OperaHouseApp.Services
             Console.WriteLine($"Suma de returnat este: {refundAmount:C}. Biletele au fost returnate cu succes.");
 
             
+        }
+
+        public void ExitAndSave()
+        {
+            var zones = _context.GetZones();
+            string filePath = "OperaHouseData.json";
+            var dataToSave = new
+            {
+                Zones = zones.Select(z => new
+                {
+                    ZoneId = z.ZoneId,
+                    Name = z.Name,
+                    Price = z.Price,
+                    Seats = z.Seats.Select(s => new
+                    {
+                        SeatNumber = s.Number,
+                        IsOccupied = s.IsOccupied
+                    }).ToList()
+                }).ToList()
+            };
+
+            string json = JsonSerializer.Serialize(dataToSave, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(filePath, json);
+
+            Console.WriteLine($"Datele au fost salvate în {filePath}. Aplicatia se va inchide.");
+            Environment.Exit(0);
         }
     }
         
