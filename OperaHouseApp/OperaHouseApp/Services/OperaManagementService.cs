@@ -20,50 +20,27 @@ namespace OperaHouseApp.Services
         // Metoda pentru vânzarea biletelor
         public Ticket SellTickets(string zoneId, List<int> seatNumbers, int userId) 
         {
-            Zone zone = _context.GetZone(zoneId);
-            if (zone == null || !zone.Seats.Any(s => seatNumbers.Contains(s.Number) && !s.IsOccupied))
-            {
-                Console.WriteLine("Some of the seats are either occupied or do not exist.");
-                return null;
-            }
-
-            // Ocupă locurile
-            foreach (int seatNumber in seatNumbers)
-            {
-                zone.TryOccupySeat(seatNumber);
-            }
-
-            decimal totalPrice = seatNumbers.Count * zone.Price;
-            Ticket ticket = new Ticket(zoneId, seatNumbers, totalPrice);
-
-            _context.SaveTicket(ticket);
-            return ticket;
+            
         }
 
         // Metoda pentru afișarea situației locurilor libere
         public void DisplayAvailableSeats()
         {
             var zones = _context.GetZones();
+            Console.WriteLine("Available Seats in Each Zone:");
+
             foreach (var zone in zones)
             {
-                Console.WriteLine($"{zone.ZoneId}: {zone.AvailableSeats} seats available");
+                // Calculăm numărul de locuri libere
+                int availableSeats = zone.Seats.FindAll(seat => !seat.IsOccupied).Count;
+                Console.WriteLine($"{zone.Name} (Zone ID: {zone.ZoneId}): {availableSeats} seats available");
             }
         }
 
         // Metoda pentru configurarea sălii (de exemplu, ajustarea prețurilor)
         public void ConfigureZone(string zoneId, decimal newPrice)
         {
-            Zone zone = _context.GetZone(zoneId);
-            if (zone != null)
-            {
-                zone.Price = newPrice;
-                _context.UpdateZone(zone);
-                Console.WriteLine("Zone price updated successfully.");
-            }
-            else
-            {
-                Console.WriteLine("Zone not found.");
-            }
+          
         }
     }
 }

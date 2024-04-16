@@ -10,7 +10,7 @@ namespace OperaHouseApp.DataModel
     {
         public override UserType Type => UserType.Visitor;
 
-        public Visitor(int id, string username) : base(id,"Guest", "") { }
+        public Visitor(int id, string username,string password) : base(id,"Guest", "") { }
 
         public override void DisplayMenu()
         {

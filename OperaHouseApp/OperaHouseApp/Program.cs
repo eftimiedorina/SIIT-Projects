@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string connectionString = $"Server=DORINA-LAPTOP;Database=OperaHouseManagement;User Id=DORINA-Laptop'\'Dorina;Password='';";
         }
     }
 }
