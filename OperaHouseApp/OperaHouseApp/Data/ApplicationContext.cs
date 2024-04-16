@@ -97,7 +97,7 @@ namespace OperaHouseApp.Data
             }
         }
 
-        public void SaveTicket(Ticket ticket)
+        public int SaveTicket(Ticket ticket)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -117,9 +117,138 @@ namespace OperaHouseApp.Data
                     seatCommand.Parameters.AddWithValue("@ZoneId", ticket.ZoneId);
                     seatCommand.ExecuteNonQuery();
                 }
+
+                return ticketId;
             }
         }
-        
+
+        public List<Ticket> GetAllTicketsByUser(int userId)
+        {
+            List<Ticket> tickets = new List<Ticket>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = new SqlCommand(
+                    "SELECT TicketId, ZoneId, TotalPrice FROM Tickets WHERE UserId = @UserId",
+                    connection);
+                command.Parameters.AddWithValue("@UserId", userId);
+
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var ticket = new Ticket(reader.GetInt32(0), userId, reader.GetString(1), new List<int>(), reader.GetDecimal(2));
+                        
+                        tickets.Add(ticket);
+                    }
+                }
+            }
+
+            
+
+            return tickets;
+        }
+
+        private List<int> GetSeatNumbersByTicket(int ticketId)
+        {
+            List<int> seatNumbers = new List<int>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = new SqlCommand(
+                    "SELECT SeatId FROM TicketSeats WHERE TicketId = @TicketId",
+                    connection);
+                command.Parameters.AddWithValue("@TicketId", ticketId);
+
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        seatNumbers.Add(reader.GetInt32(0));
+                    }
+                }
+            }
+            return seatNumbers;
+        }
+
+        public void ReturnTickets(int ticketId, int numberOfTicketsToReturn)
+        {
+            // Pasul 1: Identificarea locurilor care trebuie eliberate
+            var seatsToFree = GetSeatsToFree(ticketId, numberOfTicketsToReturn);
+
+            // Pasul 2: Marcarea locurilor ca fiind libere
+            foreach (var seatId in seatsToFree)
+            {
+                FreeSeat(seatId);
+            }
+
+            // Pasul 3: Actualizarea biletului sau ștergerea acestuia, dacă toate locurile sunt returnate
+            UpdateOrDeleteTicket(ticketId, seatsToFree.Count());
+        }
+
+        private void UpdateOrDeleteTicket(int ticketId, int numberOfSeatsFreed)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand("DELETE FROM TicketSeats WHERE TicketId = @TicketId", connection);
+                command.Parameters.AddWithValue("@TicketId", ticketId);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        private void FreeSeat(int seatId)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand("UPDATE Seats SET IsOccupied = 0 WHERE SeatId = @SeatId", connection);
+                command.Parameters.AddWithValue("@SeatId", seatId);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        private int[] GetSeatsToFree(int ticketId, int numberOfTicketsToReturn)
+        {
+            int[] seatIds = new int[numberOfTicketsToReturn];
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand("SELECT SeatId FROM TicketSeats WHERE TicketId = @TicketId", connection);
+                command.Parameters.AddWithValue("@TicketId", ticketId);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    int index = 0;
+                    while (reader.Read() && index < numberOfTicketsToReturn)
+                    {
+                        seatIds[index++] = reader.GetInt32(0);
+                    }
+                }
+            }
+            return seatIds;
+        }
+
+        public decimal GetZonePrice(string zoneId)
+        {
+            decimal price = 0.0m;
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = new SqlCommand("SELECT Price FROM Zones WHERE ZoneId = @ZoneId", connection);
+                command.Parameters.AddWithValue("@ZoneId", zoneId);
+
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        price = reader.GetDecimal(0);
+                    }
+                }
+            }
+            return price;
+        }
+
     }
 
 }

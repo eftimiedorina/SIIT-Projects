@@ -8,11 +8,13 @@ namespace OperaHouseApp.DataModel
 {
     public class Ticket
     {
+        public int TicketId { get; set; }
         public int UserId { get; set; }
         public string ZoneId {  get; set; }
         public List<int> SeatNumbers { get; set; }
         public decimal TotalPrice { get; set; }
 
+        // Constructor fără TicketId, deoarece este setat după crearea în baza de date
         public Ticket(int userID, string zoneId, List<int> seatNumbers, decimal totalPrice)
         {
             UserId = userID;

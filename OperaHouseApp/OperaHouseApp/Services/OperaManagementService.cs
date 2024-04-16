@@ -17,11 +17,6 @@ namespace OperaHouseApp.Services
             _context = context;
         }
 
-        // Metoda pentru vânzarea biletelor
-      /*  public Ticket SellTickets(string zoneId, List<int> seatNumbers, int userId) 
-        {
-            
-        }*/
 
         // Metoda pentru afișarea situației locurilor libere
         public void DisplayAvailableSeats()
@@ -43,43 +38,108 @@ namespace OperaHouseApp.Services
           
         }
 
-        public bool SellTickets(string zoneId, List<int> seatNumbers, int userId)
+        public void SellTickets(int currentUserId)
         {
-            // Obține zona după ID
-            var zone = _context.GetZones().FirstOrDefault(z => z.ZoneId == zoneId);
-            if (zone == null)
+            var zones = _context.GetZones();
+            var availableZones = zones.Where(z => z.Seats.Any(s => !s.IsOccupied)).ToList();
+
+            if (!availableZones.Any())
             {
-                Console.WriteLine("Zone not found.");
-                return false;
+                Console.WriteLine("Ne pare rău. Nu mai sunt locuri libere.");
+                return;
             }
 
-            // Verifică dacă toate locurile solicitate sunt libere
-            var availableSeats = zone.Seats.Where(seat => !seat.IsOccupied && seatNumbers.Contains(seat.Number)).ToList();
-            if (availableSeats.Count != seatNumbers.Count)
+            Console.WriteLine("Avem locuri libere în:");
+            foreach (var zone in availableZones)
             {
-                Console.WriteLine("Some of the requested seats are not available.");
-                return false;
+                Console.WriteLine($"{zone.Name} ({zone.ZoneId}): {zone.Seats.Count(s => !s.IsOccupied)} locuri libere");
             }
 
-            // Ocupă locurile
-            foreach (var seat in availableSeats)
+            string zoneId;
+            Zone selectedZone;
+            do
             {
-                seat.IsOccupied = true;
-                _context.UpdateSeat(seat);  // Presupunem existența acestei metode în ApplicationContext
+                Console.WriteLine("Selectați zona în care doriți locurile:");
+                zoneId = Console.ReadLine();
+                selectedZone = availableZones.FirstOrDefault(z => z.ZoneId == zoneId);
+                if (selectedZone == null)
+                {
+                    Console.WriteLine("Zona selectată nu este validă sau nu are locuri libere. Încercați din nou.");
+                }
+            }
+            while (selectedZone == null);
+
+            Console.WriteLine("Introduceți numărul de locuri:");
+            int numSeats;
+            while (!int.TryParse(Console.ReadLine(), out numSeats) || numSeats <= 0 || numSeats > selectedZone.Seats.Count(s => !s.IsOccupied))
+            {
+                if (numSeats > selectedZone.Seats.Count(s => !s.IsOccupied))
+                {
+                    Console.WriteLine($"În zona {selectedZone.Name} mai sunt doar {selectedZone.Seats.Count(s => !s.IsOccupied)} locuri libere.");
+                    Console.WriteLine("Apăsați orice tastă pentru a continua.");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.WriteLine("Numărul introdus nu este valid. Încercați din nou:");
+                }
             }
 
-            // Calculează prețul total
-            decimal totalPrice = availableSeats.Count * zone.Price;
+            var seatsToOccupy = selectedZone.Seats.Where(s => !s.IsOccupied).Take(numSeats).ToList();
+            seatsToOccupy.ForEach(s => s.IsOccupied = true);
 
-            // Crează biletul
-            Ticket ticket = new Ticket(userId, zoneId, availableSeats.Select(s => s.Number).ToList(), totalPrice);
+            decimal totalPrice = numSeats * selectedZone.Price;
+            Console.WriteLine($"Total de plată: {totalPrice:C}. Bilete vândute cu succes pentru {selectedZone.Name}.");
+
+            Ticket newTicket = new Ticket(currentUserId, zoneId, seatsToOccupy.Select(s => s.Number).ToList(), totalPrice);
             
-            // Salvează biletul în baza de date
-            _context.SaveTicket(ticket); 
-
-            Console.WriteLine("Ticket sold successfully.");
-            return true;
+            int ticketId = _context.SaveTicket(newTicket);  // Salvarea biletului în baza de date și obținerea ID-ului biletului
+            Console.WriteLine($"Biletul a fost salvat cu ID-ul {ticketId}.");
         }
-        
+
+        public void ReturnTickets(int currentUserId)
+        {
+            var tickets = _context.GetAllTicketsByUser(currentUserId);
+
+            if (tickets.Count == 0)
+            {
+                Console.WriteLine("Nu s-a vândut încă nici un bilet.");
+                return;
+            }
+
+            Console.WriteLine("Retur bilete la:");
+            foreach (var ticket in tickets)
+            {
+                Console.WriteLine($"{ticket.ZoneId}: {ticket.SeatNumbers.Count} locuri ocupate");
+            }
+
+            Console.Write("Introduceți ID-ul zonei pentru care doriți să returnați bilete: ");
+            string zoneId = Console.ReadLine();
+            var ticketToReturn = tickets.FirstOrDefault(t => t.ZoneId == zoneId);
+
+            if (ticketToReturn == null)
+            {
+                Console.WriteLine("Nu există bilete vândute în această zonă sau zona introdusă este incorectă.");
+                return;
+            }
+
+            Console.Write("Câte bilete returnați? ");
+            if (!int.TryParse(Console.ReadLine(), out int numberOfTickets) || numberOfTickets <= 0 || numberOfTickets > ticketToReturn.SeatNumbers.Count)
+            {
+                Console.WriteLine($"Număr invalid de bilete. Puteți returna maximum {ticketToReturn.SeatNumbers.Count} bilete.");
+                return;
+            }
+
+            // Procesul de returnare a biletelor
+            _context.ReturnTickets(ticketToReturn.TicketId, numberOfTickets);
+
+            decimal refundAmount = numberOfTickets * _context.GetZonePrice(ticketToReturn.ZoneId);
+            Console.WriteLine($"Suma de returnat este: {refundAmount:C}. Biletele au fost returnate cu succes.");
+
+            // Actualizarea bazei de date
+            // Presupunând că există o metodă în ApplicationContext care să gestioneze logica de returnare
+        }
     }
+        
+    
 }
